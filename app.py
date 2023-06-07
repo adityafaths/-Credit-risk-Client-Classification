@@ -47,6 +47,7 @@ duration = st.number_input(
     "Duration Loan",
     min_value=0
 )
+
 credit_history = st.selectbox(
         "Client Credit History ",
         (dict_credit_history.keys()),
@@ -135,7 +136,7 @@ model = xgb.XGBClassifier()
 model.load_model('./model.json')
 
 def predict():
-    x = [dict_checking_status[checking_status],duration,dict_credit_history[credit_history],dict_purpose[purpose],credit_amount,employment[dict_employment],dict_personal_status[personal_status],dict_other_parties[other_parties],dict_other_parties[other_parties],dict_residence_since[residence_since],dict_property_magnitude[property_magnitude],age,dict_other_payment_plans[other_payment_plans],dict_housing[housing], dict_existing_credits[existing_credits],dict_job[job],dict_own_telephone[own_telephone]]
+    x = [dict_checking_status[checking_status],duration,dict_credit_history[credit_history],dict_purpose[purpose],credit_amount,dict_employment[employment],dict_personal_status[personal_status],dict_other_parties[other_parties],dict_other_parties[other_parties],dict_residence_since[residence_since],dict_property_magnitude[property_magnitude],age,dict_other_payment_plans[other_payment_plans],dict_housing[housing], dict_existing_credits[existing_credits],dict_job[job],dict_own_telephone[own_telephone]]
     df = pd.DataFrame([x] , columns = model.feature_names_in_)
     prediction = model.predict(df)
     prediction_prob = model.predict_proba(df)
