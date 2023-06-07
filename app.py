@@ -63,7 +63,7 @@ credit_amount = st.number_input(
     min_value=0
 )
 
-savings_status = st.number_input(
+savings_status = st.selectbox(
      "Saving status of client",
     dict_savings_status.keys()
 )
