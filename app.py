@@ -19,7 +19,7 @@ st.write("##")
 
 # declaring variables
 dict_personal_status= {'male single':0,'female div/dep/mar':1,'male div/sep':2,'male mar/wid':3}
-dict_purpose = {'business':0, 'new car':1,'used car':2, 'education':3, 'retraining':4, 'other':,5'domestic appliance':6,'radio/tv':7,'furniture/equipment':8,'repairs':9}
+dict_purpose = {'business':0, 'new car':1,'used car':2, 'education':3, 'retraining':4, 'other':5,'domestic appliance':6,'radio/tv':7,'furniture/equipment':8,'repairs':9}
 dict_savings_status = {'no known savings':0, '<100':1,'100<=X<500':2,'500<=X<1000':3,'>=1000':4}
 dict_own_telephone= {'yes':0, 'none':1}
 dict_employment = {'unemployed':0, '<1':1,'1<=X<4':2,'4<=X<7':3,'>=7':4}
