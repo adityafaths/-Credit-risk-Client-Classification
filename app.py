@@ -141,9 +141,9 @@ def predict():
     prediction = model.predict(df)
     prediction_prob = model.predict_proba(df)
     if(prediction[0] == 0):
-        st.write('This customer segment :green[will deposit] with probability of ', "%.2f" % (prediction_prob[0][1]*100), '%')
+        st.write('This customer  :green[will pay loan on time] ')
     else:
-        st.write('This customer segment :red[will not deposit] with probability of ', "%.2f" % (prediction_prob[0][0]*100), '%')    
+        st.write('This customer  :red[will default on payment] ')    
         
 if st.button('Classify'): 
     predict()
