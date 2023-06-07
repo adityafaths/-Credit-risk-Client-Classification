@@ -140,7 +140,7 @@ def predict():
     df = pd.DataFrame([x] , columns = model.feature_names_in_)
     prediction = model.predict(df)
     prediction_prob = model.predict_proba(df)
-    if(prediction[1] == 1):
+    if(prediction[0] == 0):
         st.write('This customer segment :green[will deposit] with probability of ', "%.2f" % (prediction_prob[0][1]*100), '%')
     else:
         st.write('This customer segment :red[will not deposit] with probability of ', "%.2f" % (prediction_prob[0][0]*100), '%')    
