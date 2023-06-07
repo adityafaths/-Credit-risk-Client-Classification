@@ -38,9 +38,9 @@ dict_existing_credits = {'1':1, '2':2, '3':3,'4':4}
 st.subheader("Customer Infomation")
 
 # selecting job
-personal_status = st.selectbox(
+checking_status = st.selectbox(
         "Select checking status",
-        (dict_personal_status.keys()),
+        (dict_checking_status.keys()),
 )
 
 duration = st.number_input(
@@ -57,12 +57,17 @@ purpose = st.selectbox(
         "Select Client's purpose",
         (dict_purpose.keys()),
 )
-credit = st.number_input(
+credit_amount = st.number_input(
     "credit Amount",
     min_value=0
 )
 
-emmployment = st.selectbox(
+savings_status = st.number_input(
+     "Saving status of client",
+    dict_savings_status.keys()
+)
+
+employment = st.selectbox(
     "Client employed?",
     dict_employment.keys()
 )
@@ -130,7 +135,7 @@ model = xgb.XGBClassifier()
 model.load_model('./model.json')
 
 def predict():
-    x = [dict_personal_status[personal_status],duration,dict_credit_history[credit_history],dict_purpose[purpose],credit,employment[dict_employment],dict_personal_status[personal_status],dict_other_parties[other_parties],dict_other_parties[other_parties],dict_residence_since[residence_since],dict_property_magnitude[property_magnitude],age,dict_other_payment_plans[other_payment_plans],dict_housing[housing], dict_existing_credits[existing_credits],dict_job[job],dict_own_telephone[own_telephone]]
+    x = [dict_checking_status[checking_status],duration,dict_credit_history[credit_history],dict_purpose[purpose],credit_amount,employment[dict_employment],dict_personal_status[personal_status],dict_other_parties[other_parties],dict_other_parties[other_parties],dict_residence_since[residence_since],dict_property_magnitude[property_magnitude],age,dict_other_payment_plans[other_payment_plans],dict_housing[housing], dict_existing_credits[existing_credits],dict_job[job],dict_own_telephone[own_telephone]]
     df = pd.DataFrame([x] , columns = model.feature_names_in_)
     prediction = model.predict(df)
     prediction_prob = model.predict_proba(df)
