@@ -80,7 +80,7 @@ personal_status = st.selectbox(
 
 other_parties = st.selectbox(
         "Client have other parties ?",
-        (other_parties.keys()),
+        (dict_other_parties.keys()),
 )
 
 residence_since = st.selectbox(
