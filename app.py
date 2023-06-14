@@ -6,17 +6,10 @@ import pandas as pd
 import math
 
 ##page layout
-st.set_page_config(layout="centered", page_icon="", page_title=" Customer Segmentation In Bank Marketing")
-st.title("🏦 Customer Segmentation In Bank Marketing")
-st.image("https://echovme.in/wp-content/uploads/2022/07/social-media-digital-marketing-strategies-for-banks.jpg", caption=None)
-st.caption("Time deposits are the main source of income for a bank. Time deposits are cash investments held at financial institutions. Your money is invested for an agreed rate of interest over a certain period or period. Telephone marketing campaigns are still one of the most effective ways to reach people. However, they require a large investment of hiring a call center to actually run this campaign. That's why it's so important to identify customers who are most likely to convert first so they can be targeted specifically through calls. The data relates to a direct marketing campaign (phone calls) from a Portuguese banking institution. The purpose of classification is to predict whether a client will subscribe to a time deposit.")
-st.subheader(
-    ":blue[Will client will subscribe to term deposit?]"
-)
-st.info("Whilst every effort has been taken during the development of these tools for them to be as accurate and reliable as possible it is important that the user understands they are still a prediction and not an absolute. Any decisions taken whist using these tools are the responsibility of the user and no liability whatsoever will be taken by the developers/authors of the tools or the website owner.",icon="ℹ️")
+st.set_page_config(layout="centered", page_icon="", page_title=" Klasifikasi Profil Resiko Kredit Nasabah")
+st.title("🏦 Klasifikasi Profil Resiko Kredit Nasabah")
 st.write("##")
 st.write("##")
-
 # declaring variables
 dict_personal_status= {'male single':0,'female div/dep/mar':1,'male div/sep':2,'male mar/wid':3}
 dict_purpose = {'business':0, 'new car':1,'used car':2, 'education':3, 'retraining':4, 'other':5,'domestic appliance':6,'radio/tv':7,'furniture/equipment':8,'repairs':9}
